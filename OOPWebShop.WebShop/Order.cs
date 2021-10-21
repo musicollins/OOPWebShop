@@ -22,21 +22,21 @@ namespace OOPWebShop.WebShop
                 $"Ordered the following products: \n" +
                 $"{ShoppingCart.ToString()}";
         }
-        public string OrderPayment(Payment payment)
+        public Receipt OrderPayment(Payment payment)
         {
             Payment = payment;
             if (payment.isPaid)
             {
-                return $"OrderId: {orderId}" +
+                return new Receipt($"OrderId: {orderId}" +
                     $"Order Paid: Date: {Payment.ToString()}\n" +
                     $"Dear {Customer.FullName}, thank you for your purchase. Here comes your receipt\n" +
                     $"Paid with CreditCard {Customer.CreditCard.CreditCardNum}\n" +
                     $"Ordered following products\n" +
-                    $"{ShoppingCart.ToString()}";
+                    $"{ShoppingCart.ToString()}");
             }
             else
             {
-                return "Payment Failed!";
+                return null;
             }
            
         }

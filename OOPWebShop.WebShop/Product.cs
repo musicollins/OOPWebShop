@@ -7,9 +7,9 @@ namespace OOPWebShop.WebShop
         public Guid Id { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
-        public string ProductType { get; set; }
+        public ProductType ProductType { get; set; }
 
-        public Product(string name, int price, string productType)
+        public Product(string name, int price, ProductType productType)
         {
             Id = Guid.NewGuid();
             Name = name;
@@ -22,8 +22,9 @@ namespace OOPWebShop.WebShop
         }
     }
 
-    //public enum ProductType
-    //{
-    //    PHYSICAL, DIGITAL, UNDEFINED
-    //}
+    public enum ProductType
+    {
+        PHYSICAL, 
+        DIGITAL
+    }
 }
