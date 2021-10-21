@@ -21,10 +21,4 @@ namespace OOPWebShop.WebShop
             return $"Product Type: { ProductType }, Product Name: {Name}, Product Price: {Price}";
         }
     }
-
-    public enum ProductType
-    {
-        PHYSICAL, 
-        DIGITAL
-    }
 }

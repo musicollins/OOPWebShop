@@ -9,7 +9,7 @@ namespace OOPWebShop.WebShop
             Customer cust = new Customer("John", "Smith", 111122223334444);
             
             ShoppingCart cart = new ShoppingCart();
-            cart.addProduct(new ProductAmount(Catalogue.GetProduct("iPhone 5"), 2));
+            cart.addProduct(new ProductAmount(Catalogue.GetProduct("iPhone 5"),2));
             cart.addProduct(new ProductAmount(Catalogue.GetProduct("iPhone X")));
             cart.addProduct(new ProductAmount(Catalogue.GetProduct("iPhone 12 Pro"),3));
             cart.addProduct(new ProductAmount(Catalogue.GetProduct("iPhone 5"),3));
