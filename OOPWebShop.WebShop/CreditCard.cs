@@ -1,4 +1,6 @@
-﻿namespace OOPWebShop.WebShop
+﻿using System;
+
+namespace OOPWebShop.WebShop
 {
     public class CreditCard
     {
@@ -8,11 +10,19 @@
         {
             CreditCardNum = accNum;
         }
+        public Payment MakePayment(int totalcost)
+        {
+            //validation
+            return new Payment(totalcost);
 
+        }
         public override string ToString()
         {
             return $"Credit Card Number: {CreditCardNum}";
         }
+
+
+
 
     }
 }

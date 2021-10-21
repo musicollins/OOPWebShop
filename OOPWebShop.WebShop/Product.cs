@@ -16,7 +16,6 @@ namespace OOPWebShop.WebShop
             Price = price;
             ProductType = productType;
         }
-
         public override string ToString()
         {
             return $"Product Type: { ProductType }, Product Name: {Name}, Product Price: {Price}";

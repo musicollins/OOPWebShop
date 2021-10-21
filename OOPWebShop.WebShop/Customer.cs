@@ -8,12 +8,9 @@ namespace OOPWebShop.WebShop
 {
     public class Customer
     {
-        public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string FullName  => Firstname + " " + Lastname;
-        public string Email { get; set; }
-        public string Address { get; set; }
         public CreditCard CreditCard { get; set; }
 
         public Customer(string firstname, string lastname, long CCNum)
@@ -21,7 +18,20 @@ namespace OOPWebShop.WebShop
             Firstname = firstname;
             Lastname = lastname;
             CreditCard = new CreditCard(CCNum);
+        }
 
+        //Create Order
+        public Order PlaceOrder(ShoppingCart cart)
+        {
+            var currentCustomer = this;
+            var order = new Order(currentCustomer, cart);
+            return order;
+        }
+        //Handle Pay
+
+        public Payment PayForOrder(ShoppingCart cart)
+        {
+            return CreditCard.MakePayment(cart.GetTotalCost());
         }
 
         public override string ToString()
